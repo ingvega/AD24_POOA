@@ -13,16 +13,15 @@ import java.util.ArrayList;
  * @author paveg
  */
 public class PnlContenedor extends javax.swing.JPanel {
-    ArrayList<Circulo> lista;
+    private Circulo[] circulos;
     /**
      * Creates new form PnlContenedor
      */
-    public PnlContenedor() {
+    
+    
+    public PnlContenedor(Circulo[] listaCirculos) {
         initComponents();
-    }
-    public PnlContenedor(ArrayList<Circulo> lista) {
-        initComponents();
-        this.lista=lista;
+        this.circulos=listaCirculos;
     }
 
     /**
@@ -46,11 +45,15 @@ public class PnlContenedor extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     public void paint(Graphics g){
-        Graphics2D renderizado=(Graphics2D)g;
-        for (int i = 0; i < lista.size(); i++) {
-            renderizado.drawOval(lista.get(i).centro.getX(),lista.get(i).centro.getY(),100,100);
+        for (int i = 0; i < circulos.length; i++) {
+            if(circulos[i]==null) break;
+            Circulo circuloADibujar=circulos[i];
+            g.drawOval(circuloADibujar.centro.getX()-circuloADibujar.getRadio(),
+                    circuloADibujar.centro.getY()-circuloADibujar.getRadio(),
+                    circuloADibujar.getRadio()*2,
+                    circuloADibujar.getRadio()*2);
         }
-        //renderizado.drawOval(0,0,100,100);
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

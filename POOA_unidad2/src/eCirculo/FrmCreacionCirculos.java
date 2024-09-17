@@ -4,24 +4,23 @@
  */
 package eCirculo;
 
-import java.awt.Graphics;
-import java.util.ArrayList;
-
-
 /**
  *
  * @author paveg
  */
 public class FrmCreacionCirculos extends javax.swing.JFrame {
-    ArrayList<Circulo> lista=new ArrayList<>();
+    
     PnlContenedor pnl;
+    Circulo[] circulos=new Circulo[20];
     /**
      * Creates new form FrmCreacionCirculos
      */
     public FrmCreacionCirculos() {
         initComponents();
-        pnl=new PnlContenedor(lista);
-        pnl.setBounds(0,0,getHeight(),getHeight());
+        pnl=new PnlContenedor(circulos);
+        circulos[0]=new Circulo(100);
+        circulos[1]=new Circulo(200);
+        pnl.setBounds(0, 0, 500, this.getHeight());
         this.add(pnl);
     }
     
@@ -108,7 +107,7 @@ public class FrmCreacionCirculos extends javax.swing.JFrame {
                     .addComponent(txtRadio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(chkIndicarUbicacion)
-                .addGap(13, 13, 13)
+                .addGap(19, 19, 19)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
@@ -116,7 +115,7 @@ public class FrmCreacionCirculos extends javax.swing.JFrame {
                     .addComponent(spnY, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnCrear)
-                .addContainerGap(453, Short.MAX_VALUE))
+                .addContainerGap(447, Short.MAX_VALUE))
         );
 
         pack();
@@ -136,9 +135,7 @@ public class FrmCreacionCirculos extends javax.swing.JFrame {
         }else{
             c=new Circulo(radio);
         }
-        lista.add(c);
-        this.repaint();
-        //pnl.paint(pnl.getGraphics());
+        
         
     }//GEN-LAST:event_btnCrearActionPerformed
 

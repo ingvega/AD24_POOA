@@ -35,6 +35,9 @@ public class Circulo {
         this.centro = centro;
     }
 
+    public int getRadio(){
+        return radio;
+    }
     public void aumentarRadio() {
         radio++;
     }
