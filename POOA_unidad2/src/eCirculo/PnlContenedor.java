@@ -48,7 +48,8 @@ public class PnlContenedor extends javax.swing.JPanel {
         for (int i = 0; i < circulos.length; i++) {
             if(circulos[i]==null) break;
             Circulo circuloADibujar=circulos[i];
-            g.drawOval(circuloADibujar.centro.getX()-circuloADibujar.getRadio(),
+            g.setColor(circuloADibujar.getColor());
+            g.fillOval(circuloADibujar.centro.getX()-circuloADibujar.getRadio(),
                     circuloADibujar.centro.getY()-circuloADibujar.getRadio(),
                     circuloADibujar.getRadio()*2,
                     circuloADibujar.getRadio()*2);

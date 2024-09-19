@@ -4,6 +4,8 @@
  */
 package eCirculo;
 
+import java.awt.Color;
+
 /**
  *
  * @author paveg
@@ -12,6 +14,7 @@ public class Circulo {
 
     private int radio = 1;
     public Punto centro;
+    private Color color;
 
     public Circulo(int radio) {
         //Punto origen = new Punto(0, 0);
@@ -35,6 +38,15 @@ public class Circulo {
         this.centro = centro;
     }
 
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
+
+    
     public int getRadio(){
         return radio;
     }
