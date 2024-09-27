@@ -34,7 +34,25 @@ public class POOAUnidad3 {
         Alumno a=new Alumno();
         a.setNombre("Juan");
         a.setApellidos("Perez");
+        a.setNoControl("S23120001");
+        Alumno a2=new Alumno();
+        a2.setNombre("Juan");
+        a2.setApellidos("Perez");
+        a2.setNoControl("s23120001");
         //a.nombre="Juan";
+        System.out.println(a);
+        System.out.println(a.toString());
+        //a2=a;
+        if(a==a2){
+            System.out.println("Iguales");
+        }else{
+            System.out.println("Diferentes");
+        }
+        if(a.equals(a2)){
+            System.out.println("Iguales");
+        }else{
+            System.out.println("Diferentes");
+        }
         
     }
     
