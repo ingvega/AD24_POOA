@@ -54,6 +54,25 @@ public class POOAUnidad3 {
             System.out.println("Diferentes");
         }
         
+        System.out.println(a.equals(null));
+        System.out.println(a.equals("Juan Perez"));
+        Object objeto=a;
+        System.out.println(a.getClass());
+        System.out.println(objeto.getClass());
+        
+        if(a instanceof Alumno){
+            System.out.println("Es un derivado de alumno");
+        }
+        if(a instanceof Persona){
+            System.out.println("Es un derivado de persona");
+        }
+        
+        //Verificar si pertenece a un tipo de dato de clases base
+        Persona p=new Persona();
+        if(p instanceof Alumno){
+            System.out.println("Es un derivado de alumno");
+        }
+        
     }
     
     
