@@ -54,5 +54,12 @@ public class Circulo  extends Figura{
             this.radio-=decremento;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Circulo con radio " + radio 
+                + ' ' + super.toString();
+    }
+    
     
 }

@@ -40,5 +40,10 @@ public class Figura {
     }
     //public void incrementar() {  
     //}
+
+    @Override
+    public String toString() {
+        return "ubicado en " + punto;
+    }
     
 }
