@@ -10,7 +10,7 @@ import java.awt.Color;
  *
  * @author paveg
  */
-public class Figura {
+public abstract class Figura {
     private Punto punto;
     private Color color;
 
@@ -32,11 +32,9 @@ public class Figura {
     
     
     
-    public void moverX(int cantidad) {
-        punto.setX(punto.getX()+cantidad);
-    }
-    public void moverY(int cantidad) {
-        punto.setY(punto.getY()+cantidad);
+    public void mover(int x,int y) {
+        punto.setX(x);
+        punto.setY(y);
     }
     //public void incrementar() {  
     //}
@@ -45,5 +43,9 @@ public class Figura {
     public String toString() {
         return "ubicado en " + punto;
     }
+    
+    public abstract void reducir(int decremento);
+    
+    abstract double calcularArea();
     
 }

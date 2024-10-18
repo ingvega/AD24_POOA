@@ -10,7 +10,9 @@ import java.time.LocalDate;
  *
  * @author paveg
  */
-public class Empleado extends Persona{
+public sealed abstract class Empleado 
+        extends Persona
+        permits Administrativo, Docente, Intendente{
     private int clave;
     private LocalDate fechaContratacion;
     private float sueldoXHora;

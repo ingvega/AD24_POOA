@@ -60,6 +60,11 @@ public class Circulo  extends Figura{
         return "Circulo con radio " + radio 
                 + ' ' + super.toString();
     }
+
+    @Override
+    double calcularArea() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

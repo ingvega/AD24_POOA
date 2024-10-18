@@ -11,7 +11,7 @@ import java.time.LocalDate;
  * @author paveg
  */
 
-public class Persona {
+public sealed abstract class Persona permits Empleado,Alumno {
 
     private String nombre;
     private String apellidos;

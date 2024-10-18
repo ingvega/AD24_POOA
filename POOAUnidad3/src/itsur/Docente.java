@@ -8,7 +8,7 @@ package itsur;
  *
  * @author paveg
  */
-public class Docente extends Empleado{
+public final class Docente extends Empleado{
     private String carrera;
     private int horasClase;
     private char edificio;

@@ -58,6 +58,28 @@ public class PnlContenedor extends javax.swing.JPanel {
                     c.getPunto().getY()-c.getRadio(),
                     c.getRadio()*2,
                     c.getRadio()*2);
+            }else if(figuraADibujar.getClass().equals(Rectangulo.class)){
+                Rectangulo r=(Rectangulo)figuraADibujar;
+                g.drawRect(r.getPunto().getX(),
+                    r.getPunto().getY()-r.getAltura(),
+                    r.getBase(),
+                    r.getAltura());
+            }else{
+                Triangulo t=(Triangulo)figuraADibujar;
+                int valoresX[]=new int[3];
+                int valoresY[]=new int[3];
+                valoresX[0]=t.getPunto().getX();
+                valoresY[0]=t.getPunto().getY();
+                valoresX[1]=t.getPunto().getX()+t.getBase();
+                valoresY[1]=t.getPunto().getY();
+                if(t.isRectangulo()){
+                    valoresX[2]=t.getPunto().getX();
+                    valoresY[2]=t.getPunto().getY()-t.getAltura();
+                }else{
+                    valoresX[2]=t.getPunto().getX()+t.getBase()/2;
+                    valoresY[2]=t.getPunto().getY()-t.getAltura();
+                }
+                g.drawPolygon(valoresX,valoresY,3);
             }
             
         }

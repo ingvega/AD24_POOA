@@ -8,7 +8,7 @@ package itsur;
  *
  * @author paveg
  */
-public class Administrativo {
+public non-sealed class Administrativo extends Empleado{
     private String departamento;
 
     public String getDepartamento() {

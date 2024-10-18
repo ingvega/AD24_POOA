@@ -65,6 +65,11 @@ public class Rectangulo extends Figura {
         return "Rectangulo con base " + base + " altura " 
                 + altura + ' ' + super.toString();
     }
+
+    @Override
+    double calcularArea() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     
     
 }

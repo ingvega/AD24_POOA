@@ -8,7 +8,7 @@ package itsur;
  *
  * @author paveg
  */
-public class Intendente {
+public final class Intendente extends Empleado{
     private Turno turno;
 
     public Turno getTurno() {

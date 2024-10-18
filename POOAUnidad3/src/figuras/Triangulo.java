@@ -14,16 +14,20 @@ public class Triangulo extends Figura {
     private boolean rectangulo=true;
 
     public Triangulo(int base,int altura) {
-        this(base,altura, new Punto(0, 0));
+        this(base,altura, true, new Punto(0, 0));
+    }
+    public Triangulo(int base,int altura, boolean rectangulo) {
+        this(base,altura, rectangulo, new Punto(0, 0));
     }
 
-    public Triangulo(int base,int altura, Punto punto) {
+    public Triangulo(int base,int altura, boolean rectangulo, Punto punto) {
         if (base > 0) {
             this.base = base;
         }
         if (altura > 0) {
             this.altura = altura;
         }
+        this.rectangulo=rectangulo;
         this.setPunto(punto);
     }
 
@@ -60,13 +64,18 @@ public class Triangulo extends Figura {
         }
     }
     
+    @Override
     public void reducir(int decremento){
-        if(decremento <= 0){
+        if(decremento <= 0 || base-decremento<=0 || altura-decremento<=0){
             System.out.println("Uy no, no se redujo :/");
         }else{
             this.base-=decremento;
             this.altura-=decremento;
         }
+    }
+    
+    double calcularArea(){
+        return base*altura/2.0;
     }
     
     @Override
