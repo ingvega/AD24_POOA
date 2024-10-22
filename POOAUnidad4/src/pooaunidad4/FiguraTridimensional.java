@@ -8,8 +8,6 @@ package pooaunidad4;
  *
  * @author paveg
  */
-public interface FiguraBidimensional {
-    //int id=1;
-    double calcularArea();
-    double calcularPerimetro();
+public interface FiguraTridimensional {
+    double calcularVolumen();
 }

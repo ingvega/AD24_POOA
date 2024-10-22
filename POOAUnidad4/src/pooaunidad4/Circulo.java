@@ -8,7 +8,7 @@ package pooaunidad4;
  *
  * @author paveg
  */
-public class Circulo  extends Figura{  
+public class Circulo  extends Figura implements FiguraBidimensional{  
     private int radio = 1;
 
     public Circulo(int radio) {
@@ -26,19 +26,12 @@ public class Circulo  extends Figura{
         return radio;
     }
     
-    public void agrandar(int aumento){
-        if(aumento<=0){
-            System.out.println("NO SE AGRANDO, POR QUE ES NEGATIVO O CERO :3");
-        }else{
-            this.radio+=aumento;
-        }
-    }
-    
-    public void reducir(int decremento){
-        if(decremento <= 0 || this.radio-decremento<1){
+    @Override
+    public void ajustarTamanio(int ajuste){
+        if(ajuste < 0 && this.radio+ajuste<1){
             System.out.println("Uy no, no se redujo :/");
         }else{
-            this.radio-=decremento;
+            this.radio+=ajuste;
         }
     }
 
@@ -49,8 +42,13 @@ public class Circulo  extends Figura{
     }
 
     @Override
-    double calcularArea() {
+    public double calcularArea() {
         return Math.PI*radio*radio;
+    }
+
+    @Override
+    public double calcularPerimetro() {
+        return Math.PI*radio*2;
     }
     
     

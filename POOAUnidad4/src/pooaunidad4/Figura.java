@@ -10,7 +10,7 @@ import java.awt.Color;
  *
  * @author paveg
  */
-public abstract class Figura {
+public abstract class Figura  {
     private Punto punto;
     private Color color;
 
@@ -44,6 +44,6 @@ public abstract class Figura {
         return "ubicado en " + punto;
     }
     
-    public abstract void reducir(int decremento);
+    public abstract void ajustarTamanio(int ajuste);
     
 }
